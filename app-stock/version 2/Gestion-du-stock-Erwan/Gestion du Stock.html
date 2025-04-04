@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion du Stock</title>
+
+    <!-- Liens Font Awesome pour les icônes -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <!-- Liens du Fichier CSS -->
+    <link rel="stylesheet" href="Gestion du Stock.css">
+</head>
+
+<body>
+    <!-- En-tête de la page -->
+    <header class="en-tete">
+        <div class="conteneur-marque">
+            <div class="logo"><i class="fa-duotone fa-solid fa-leaf"></i></div>
+            <div class="nom-entreprise">Fru<span class="doubleTon">IT</span></div>
+        </div>
+    </header>
+
+    <div class="box">
+        <input type="text" placeholder="Search...">
+        <a href="#">
+          <i class="fas fa-search"></i>
+          <div class="box1" id="a"></div>
+        </a>
+    </div>
+
+    <!-- Conteneur principal de la page -->
+    <div class="conteneur-principal">
+        <!-- Zone de saisie pour ajouter des fruits au stock -->
+        <div class="zone-saisie" id="zone-saisie">
+            <div class="zone-titre">
+                <h2>Ajout de Fruits en stock</h2>
+            </div>
+            <div class="zone-champs">
+                 <!-- Champ pour saisir id -->
+                 <div class="champ-saisie">
+                    <i class="fa-solid fa-hashtag"></i>
+                    <input type="text" id="champ-id" title="Saisir l'ID du fruit à stocker" placeholder="id">
+                </div>
+                <!-- Champ pour saisir le nom du fruit -->
+                <div class="champ-saisie">
+                    <i class="fa-solid fa-apple-whole"></i>
+                    <input type="text" id="champ-fruit" title="Saisir le NOM du fruit à stocker" placeholder="Nom du fruit">
+                </div>
+                <!-- Champ pour saisir la quantité -->
+                <div class="champ-saisie">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <input type="number" id="champ-quantite" title="Saisir la QUANTITE de fruit à stocker" placeholder="Quantité">
+                </div>
+            </div>
+            <!-- Bouton pour valider la saisie -->
+            <div class="conteneur-button">
+                <button class="bouton" type="button" id="bouton-valider">Ajouter</button>
+            </div>
+        </div>
+
+        
+
+        
+
+        <!-- Zone pour afficher les détails de la mise en stock en cours -->
+         <!-- Sera en display none -->
+        <div class="zone-details" id="zone-details">
+            <h2>Détails de la mise en Stock</h2>
+            <!-- Affichage du nom du fruit stocker presentement -->
+            <span id="sortie-Nom" title="Affichage du nom du fruit stocker presentement"></span>
+            <!-- Affichage de la quantité stocker presentement -->
+            <span id="sortie-Qte" title="Affichage de la quantité stocker presentement"></span>
+            
+            <!-- Zone pour afficher les détails du stock -->
+            <div class="zone-stock" id="zone-stock">
+                <h2>Détails du Stock</h2>
+                <div class="liste-fruits" id="liste-fruits">
+                    <!-- Liste déroulante pour rechercher dans le stock -->
+                    <select id="selecteur-fruit" title="Rechercher dans le stock">
+                        <option value="">Rechercher dans le stock ?</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Affichage du résultat de la recherche -->
+            <span class="resultat-recherche" id="resultat-recherche" title="Affichage du stock total de la recherche"></span>
+            <div class="conteneur-button">
+                <button class="bouton" type="button" id="bouton-vider">Vider</button>
+            </div>
+        </div>
+
+        <!-- Zone de saisie pour ajouter des fruits au stock -->
+        <div class="zone-saisie" id="zone-retrait">
+            <div class="zone-titre">
+                <h2>Retrait de fruits en stock</h2>
+            </div>
+            <div class="zone-champs">
+                 <!-- Champ pour saisir id -->
+                 <div class="champ-saisie input-retrait">
+                    <i class="fa-solid fa-hashtag i-retrait"></i>
+                    <input type="text" id="champ-id" title="Saisir l'ID nom du fruit à retirer du stock" placeholder="id">
+                </div>
+                <!-- Champ pour saisir le nom du fruit -->
+                <div class="champ-saisie input-retrait">
+                    <i class="fa-solid fa-apple-whole i-retrait"></i>
+                    <input type="text" id="champ-fruit-retrait" title="Saisir le nom du fruit à retirer du stock" placeholder="Nom du fruit">
+                </div>
+                <!-- Champ pour saisir la quantité -->
+                <div class="champ-saisie input-retrait">
+                    <i class="fa-solid fa-basket-shopping i-retrait"></i>
+                    <input type="number" id="champ-quantite-retrait" title="Saisir la quantité de fruit à retirer du stock" placeholder="Quantité">
+                </div>
+            </div>
+            <!-- Bouton pour valider la saisie -->
+            <div class="conteneur-button">
+                <button class="bouton b-retrait" type="button" id="bouton-retrait">Retirer</button>
+            </div>
+        </div>
+    </div>
+    <script src="jquery-3.7.1.min"></script>
+    <script src="Gestion du Stock.js"></script>
+</body>
+</html>

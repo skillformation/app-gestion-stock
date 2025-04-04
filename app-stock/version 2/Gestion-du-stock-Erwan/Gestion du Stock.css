@@ -1,0 +1,381 @@
+/* Variables globales */
+:root {
+    --couleur-principale: #2c3e50;
+    --couleur-secondaire: #2ecc71;
+    --couleur-fond: #ecf0f1;
+    --couleur-texte: #333;
+    --couleur-retrait: #e74c3c;
+}
+
+/* Styles globaux */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.4s;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, var(--couleur-principale), var(--couleur-secondaire));
+    color: var(--couleur-texte);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    height: 100vh;
+    position: relative; 
+    overflow: hidden; 
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./Images/bg_fruits.jpg') no-repeat center center;
+    background-size: cover; 
+    z-index: -1; 
+    opacity: 0.05; 
+}
+
+/* En-tête */
+.en-tete {
+    width: 100%;
+    background-color: rgb(255, 255, 255, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteneur-marque {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    background-color: var(--couleur-secondaire);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--couleur-principale);
+    animation: saut 1s infinite ease-in-out;
+}
+
+@keyframes saut {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-1px);
+    }
+}
+
+.nom-entreprise {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--couleur-principale);
+    padding: 0.5rem 1rem;
+}
+
+.doubleTon {
+    padding: 0;
+    font-size: 2.1rem;
+    color: var(--couleur-secondaire);
+    background-color: transparent;
+
+
+}
+
+/* Conteneur principal */
+.conteneur-principal {
+    width: 100%;
+    padding: 60px;
+    margin: 4rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    text-align: center;
+
+}
+
+/* Zone de saisie */
+.zone-saisie {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: rgb(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    padding: 40px;
+}
+
+
+/* Conteneur du bouton */
+.conteneur-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Bouton de validation */
+.bouton {
+    background-color: var(--couleur-secondaire);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    font-size: 1.15rem;
+
+}
+
+.bouton:hover {
+    transform: translateY(-2px) ;
+    box-shadow: 0 0 0 3px rgba(52, 219, 113, 0.2);
+}
+
+.bouton:active {
+    transform: translateY(-2px) scale(0.9);
+    box-shadow: inset 0 0 0 30px rgba(52, 219, 113, 0.3);
+}
+
+/* Zone des détails */
+.zone-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: rgb(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 40px;
+    min-height: 500px;
+}
+
+/* Sélecteur de fruit */
+#selecteur-fruit {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--couleur-secondaire);
+    border-radius: 8px;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+#selecteur-fruit:focus {
+    border-color: var(--couleur-principale);
+    box-shadow: 0 0 0 3px rgba(52, 219, 113, 0.2);
+}
+
+/* Zone des champs */
+.zone-champs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+/* Span */
+span {
+    background-color: white;
+    height: 4rem;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Zone du stock */
+.zone-stock {
+    margin-top: 1rem;
+}
+
+/*  */
+
+h2 {
+    position: relative;
+    font-size: 1.8rem;
+}
+
+.champ-saisie {
+    position: relative;
+}
+
+.champ-saisie input {
+    width: 100%;
+    padding: 12px 40px 12px 12px; 
+    border: 2px solid var(--couleur-secondaire);
+    border-radius: 8px;
+    font-size: 1.3rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.champ-saisie i {
+    position: absolute;
+    top: 50%;
+    right: 12px; 
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: var(--couleur-secondaire);
+    pointer-events: none;
+    animation: icon 5s infinite linear;
+}
+
+@keyframes icon {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateY(-50%) scale(1.2);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.champ-saisie input::placeholder {
+    font-size: 1.3rem;
+}
+
+.champ-saisie input:focus {
+    outline: none;
+    border-color: var(--couleur-principale);
+    box-shadow: 0 0 0 3px rgba(52, 219, 113, 0.2);
+}
+
+
+.i-retrait {
+    color: var(--couleur-retrait) !important; 
+}
+
+.b-retrait {
+    background-color: var(--couleur-retrait) !important; 
+}
+
+.b-retrait:hover {
+    box-shadow: 0 0 0 3px rgba(219, 77, 52, 0.2) !important;
+}
+
+.input-retrait input {
+    border-color: var(--couleur-retrait) !important; 
+}
+
+.input-retrait input:focus {
+    outline: none;
+    border-color: var(--couleur-principale);
+    box-shadow: 0 0 0 3px rgba(219, 77, 52, 0.2) !important;
+}
+
+
+
+/* Media Queries pour le responsive */
+@media (max-width: 1024px) {
+    body { 
+        overflow-y: auto;
+        height: auto;
+    }
+
+    .conteneur-principal {
+        flex-direction: column;
+        padding: 40px;
+        gap: 2rem;
+    }
+
+    .zone-saisie, .zone-details {
+        width: 80%;
+    }
+
+    .nom-entreprise {
+        font-size: 1.5rem;
+    }
+
+    .doubleTon {
+        padding: 0;
+        font-size: 1.6rem;
+    }
+
+    .bouton {
+        font-size: 1rem;
+        padding: 10px 16px;
+    }
+}
+
+.box{
+    height: 30px;
+    display: flex;
+    cursor:pointer;
+    padding: 10px 20px;
+    background: rgb(255, 255, 255, 0.9);;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    /* absolute garde sa position sur tout les element  */
+    position: absolute;
+    /* gerer la position top/bottom(axe y) qui gere la position haut/bas et left/right gere gauche/droit  */
+    top: 120px;
+}
+
+.box:hover input{
+    width: 400px;
+}
+
+.box input{
+    width: 0;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    transition: 0.8s;
+    background: transparent;
+}
+
+.box a .fas{
+    color:#2ecc71;
+    font-size: 18px ;
+}
+
+/* display,gap,align-item,justify-content */
+
+.box1{
+    height: 30px;
+    display: flex;
+    cursor:pointer;
+    padding: 10px 20px;
+    background: rgb(255, 255, 255, 0.9);;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    /* absolute garde sa position sur tout les element  */
+    position: absolute;
+    /* gerer la position top/bottom(axe y) qui gere la position haut/bas et left/right gere gauche/droit  */
+    top: 36px;
+    left: -0.5px;
+}
+
+
+
+

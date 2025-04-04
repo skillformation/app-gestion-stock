@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion du Stock</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="Gestion-du-Stock.css">
+
+    <!-- Liens Font Awesome pour les icônes -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- En-tête de la page -->
+    <header class="en-tete">
+        <div class="conteneur-marque">
+            <div class="logo"><i class="fa-duotone fa-solid fa-leaf" ></i></div>
+            <div class="nom-entreprise">Fru<span class="doubleTon">IT</span></div>
+        </div>
+        <nav class="navigation">
+            <ul class="nav-liens">
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#a-propos">À propos</a></li>
+                <li><a href="#fonctionalite">Fonctionnalités</a></li>
+                <li><a href="#footer">Contact</a></li>
+            </ul>
+        </nav>
+
+        <a id="non">
+        <div class="barre-recherche">
+             <input type="text" placeholder="Rechercher..." value="" id="rechercheA"> 
+            <button type="button"><i class="fas fa-search"></i></button>
+            <div id="suggestionA"></div>
+        </div>
+        </a>
+
+        
+        <!-- </div>
+            <div class="menu-burger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav> -->
+
+        <div class="menu-burger-icon" id="menuBurgerIcon">
+            <div class="burger-bar"></div>
+            <div class="burger-bar"></div>
+            <div class="burger-bar"></div>
+        </div>
+    
+    <nav class="nav-menu-burger" id="navMenuBurger">
+        <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#a-propos">À propos</a></li>
+            <li><a href="#fonctionalite">Fonctionnalités</a></li>
+            <li><a href="#footer">Contact</a></li>
+        </ul>
+    </nav>
+
+        
+        
+    </header>
+
+<!-- banniere Section -->
+<section class="banniere">
+    <div class="banniere-contenu">
+        <h1>Bienvenue sur FruIT</h1>
+        <p class="sous-titre">Votre solution de gestion de stock de fruits</p>
+        <a href="#a-propos" class="banniere-button">En savoir plus</a>
+    </div>
+</section>
+
+<!-- Section À propos -->
+<section class="a-propos" id="a-propos">
+    <div class="a-propos-content">
+        <h2>À propos de FruIT</h2>
+        <p class="a-propos-description">Découvrez comment notre solution simplifie la gestion de votre stock de fruits</p>
+        <div class="a-propos-cartes">
+            <div class="a-propos-carte">
+                <i class="fas fa-seedling"></i>
+                <h3>Notre Mission</h3>
+                <p>Simplifier la gestion des stocks pour les professionnels du secteur fruiter</p>
+            </div>
+            <div class="a-propos-carte">
+                <i class="fas fa-users"></i>
+                <h3>Notre Équipe</h3>
+                <p>Une équipe passionnée dédiée à votre réussite</p>
+            </div>
+            <div class="a-propos-carte">
+                <i class="fas fa-trophy"></i>
+                <h3>Notre Excellence</h3>
+                <p>Des années d'expertise dans la gestion de stock</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Section fonctionnalites/App -->
+<section class="app-fonctionnalites" id="fonctionalite">
+    <div class="app-fonctionnalites-contenu">
+        <h2>Notre Application</h2>
+        <p class="section-description">Une interface intuitive pour gérer votre stock efficacement</p>
+        
+        <div class="fonctionnalites-grille">
+            <div class="fonctionnalite-carte">
+                <div class="fonctionnalite-icon">
+                    <i class="fas fa-plus-circle"></i>
+                </div>
+                <div class="fonctionnalite-contenu">
+                    <h3>Ajout de Stock</h3>
+                    <p>Ajoutez facilement de nouveaux fruits à votre inventaire avec leur ID et quantité</p>
+                </div>
+            </div>
+            
+            <div class="fonctionnalite-carte">
+                <div class="fonctionnalite-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="fonctionnalite-contenu">
+                    <h3>Consultation</h3>
+                    <p>Visualisez rapidement l'état de votre stock en temps réel</p>
+                </div>
+            </div>
+            
+            <div class="fonctionnalite-carte">
+                <div class="fonctionnalite-icon">
+                    <i class="fas fa-minus-circle"></i>
+                </div>
+                <div class="fonctionnalite-contenu">
+                    <h3>Retrait de Stock</h3>
+                    <p>Gérez les sorties de stock de manière précise et efficace</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Conteneur principal de la page -->
+    <section class="conteneur-principal" id="app">
+
+        <div class="box barre-recherche">
+        
+            <input type="text" placeholder="Rechercher..." id="recherche" value="">
+            <button type="button"><i class="fas fa-search"></i></button>
+            <div id="suggestion" class="suggestion"></div>
+        </div>
+
+        <!-- Zone de saisie pour ajouter des fruits au stock -->
+        <div class="zone-saisie" id="zone-saisie">
+            <div class="zone-titre">
+                <h2>Ajout de fruits en stock</h2>
+            </div>
+            <div class="zone-champs">
+                <!-- Champ pour saisir id -->
+                <!-- <div class="champ-saisie">
+                    <i class="fa-solid fa-hashtag" ></i>
+                    <input type="text" id="champ-id" title="Saisir l'ID du fruit à stocker" placeholder="ID">
+                </div> -->
+                <!-- Champ pour saisir le nom du fruit -->
+                <div class="champ-saisie">
+                    <i class="fa-solid fa-apple-whole" ></i>
+                    <input type="text" id="champ-fruit" title="Saisir le NOM du fruit à stocker" placeholder="Nom du fruit">
+                </div>
+                <!-- Champ pour saisir la quantité -->
+                <div class="champ-saisie">
+                    <i class="fa-solid fa-basket-shopping" ></i>
+                    <input type="number" id="champ-quantite" title="Saisir la QUANTITE de fruit à stocker" placeholder="Quantité">
+                </div>
+            </div>
+            <!-- Bouton pour valider la saisie -->
+            <div class="conteneur-button">
+                <button class="bouton" type="button" id="bouton-valider">Ajouter</button>
+            </div>
+        </div>
+
+        <!-- Zone pour afficher les détails de la mise en stock en cours -->
+        <!-- Sera en display none -->
+        <div class="zone-details" id="zone-details">
+            <h2>Détails de la mise en stock</h2>
+            <!-- Affichage du nom du fruit stocker presentement -->
+            <span id="sortie-Nom" class="span-details" title="Affichage du nom du fruit stocker presentement">
+                <i class="fa-solid fa-apple-whole" ></i>
+            </span>
+            <!-- Affichage de la quantité stocker presentement -->
+            <span id="sortie-Qte" class="span-details" title="Affichage de la quantité stocker presentement">
+                <i class="fa-solid fa-basket-shopping" ></i>
+            </span>
+
+            <!-- Zone pour afficher les détails du stock -->
+            <div class="zone-stock" id="zone-stock">
+                <h2>Détails du stock</h2>
+                <div class="liste-fruits" id="liste-fruits">
+                    <!-- Liste déroulante pour rechercher dans le stock -->
+                    <select id="selecteur-fruit" title="Rechercher dans le stock">
+                        <option value="">Rechercher dans le stock ?</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Affichage du résultat de la recherche -->
+            <span id="resultat-recherche" class="span-details" title="Affichage du stock total de la recherche">
+                <i class="fa-solid fa-warehouse" ></i>
+            </span>
+            <div class="conteneur-button">
+                <button class="bouton b-details" type="button" id="bouton-vider">Vider</button>
+            </div>
+        </div>
+
+        <!-- Zone de saisie pour ajouter des fruits au stock -->
+        <div class="zone-saisie" id="zone-retrait">
+            <div class="zone-titre">
+                <h2>Retrait de fruits en stock</h2>
+            </div>
+            <div class="zone-champs">
+                <!-- Champ pour saisir id -->
+                <!-- <div class="champ-saisie input-retrait">
+                    <i class="fa-solid fa-hashtag i-retrait" ></i>
+                    <input type="text" id="champ-id-retrait" title="Saisir l'ID nom du fruit à retirer du stock" placeholder="ID">
+                </div> -->
+                <!-- Champ pour saisir le nom du fruit -->
+                <div class="champ-saisie input-retrait">
+                    <i class="fa-solid fa-apple-whole i-retrait" ></i>
+                    <input type="text" id="champ-fruit-retrait" title="Saisir le nom du fruit à retirer du stock" placeholder="Nom du fruit">
+                </div>
+                <!-- Champ pour saisir la quantité -->
+                <div class="champ-saisie input-retrait">
+                    <i class="fa-solid fa-basket-shopping i-retrait" ></i>
+                    <input type="number" id="champ-quantite-retrait" title="Saisir la quantité de fruit à retirer du stock" placeholder="Quantité">
+                </div>
+            </div>
+            <!-- Bouton pour valider la saisie -->
+            <div class="conteneur-button">
+                <button class="bouton b-retrait" type="button" id="bouton-retrait">Retirer</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="footer">
+        <div class="footer-contenu">
+            <div class="footer-section">
+                <div class="footer-marque">
+                    <div class="conteneur-marque">
+                        <div class="logo"><i class="fa-duotone fa-solid fa-leaf" ></i></div>
+                        <div class="nom-entreprise">Fru<span class="doubleTon">IT</span></div>
+                    </div>
+                </div>
+                <p>Votre solution innovante pour la gestion de stock de fruits.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Liens Rapides</h3>
+                <ul class="footer-liens">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Accueil</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> À propos</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Services</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone"></i> 06 96 12 23 34</p>
+                    <p><i class="fas fa-envelope"></i> contact@fruit.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Rue des Fruits, Fort-de-france</p>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Réseaux Sociaux</h3>
+                <div class="social-liens">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bas">
+            <p>&copy; 2025 FruIT. Tous droits réservés.</p>
+        </div>
+    </footer>
+    <button class="back-to-top"><i class="fa-solid fa-caret-up"></i></button>
+    
+<script src="Gestion-du-Stock.js"></script>
+</body>
+</html>
